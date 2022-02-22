@@ -37,7 +37,13 @@ then
         git push origin ${RELEASE_BRANCH}
         git tag -l
     else
-        echo "not hello"
+        #read -p "Entered tag is not the latest one.Press yes to proceed no to exit: "
+        read -e -p "Entered tag is not the latest one.Please Enter Y/y to proceed: " choice
+        [[ "$choice" == [Yy]* ]] && \
+        COMMIT_HASH=$(git rev-list -n 1 $NEW_TAG) && \
+        git tag ${RELEASE_BRANCH} ${COMMIT_ID} && \
+        git push origin ${RELEASE_BRANCH} && \
+        git tag -l || echo "Please enter valid tag"
     fi
 
 else
