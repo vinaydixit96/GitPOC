@@ -1,7 +1,12 @@
 on:
   workflow_dispatch:
     inputs:
-      an_input:
+      tag:
         description: 'Please enter the valid tag'
         required: true
         default: 'Foo'
+      prompt:
+        description: 'Entered tag is not the latest one.Please Enter Y/y to proceed:'
+        required: true
+        default: 'Foo'
+
