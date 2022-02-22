@@ -6,7 +6,7 @@ on:
         required: true
         default: 'Foo'
       prompt:
-        description: 'Please confirm if Entered tag is not the latest one and Enter Y/y to proceed:'
+        description: 'Please confirm if Entered tag is not the latest and still want to proceed by entering [Y|y]'
         required: true
         default: 'Foo'
-
+  
