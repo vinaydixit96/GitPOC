@@ -2,6 +2,6 @@ on:
   workflow_dispatch:
     inputs:
       an_input:
-        description: 'Input?'
+        description: 'Please enter the valid tag'
         required: true
         default: 'Foo'
