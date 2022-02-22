@@ -8,5 +8,16 @@ on:
       prompt:
         description: 'Please confirm if Entered tag is not the latest and still want to proceed by entering [Y|y]'
         required: true
-        default: 'Foo'
-  
+        default: 'n'
+jobs:
+    finalizebuild:
+            runs-on: ubuntu-latest
+            steps:
+              - name: initializing build
+                run: |
+                    bash GitPOC/Fbuild.sh  ${{ inputs.tag }} ${{ inputs.prompt}}
+
+
+
+            
+                  
