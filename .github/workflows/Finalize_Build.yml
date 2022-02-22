@@ -15,7 +15,7 @@ jobs:
             steps:
               - name: initializing build
                 run: |
-                    bash GitPOC/Fbuild.sh  ${{ inputs.tag }} ${{ inputs.prompt}}
+                    bash root/.scripts/Fbuld.sh ${{ inputs.tag }} ${{ inputs.prompt}}
 
 
 
