@@ -2,8 +2,8 @@
 GIT_REPOSITORY_PATH="/mnt/c/Users/vdixits/Vinay/Software/PortableGit/CVS/GitPOC"
 GIT_BRANCH="main"
 CURRENT_DIRECTORY=`pwd`
-#read -p "Please enter the tag which needs to be finalized: " BUILD_TAG;
-echo $1 > tag.txt
+read -p "Please enter the tag which needs to be finalized: " BUILD_TAG;
+echo $BUILD_TAG > tag.txt
 #SDE-2022.1.0-RC115
 if [[ `grep  'SDE-[0-9]\{4\}\.[0-9]\{1\}\.[0-9]-RC[0-9]\{1,3\}' "tag.txt"` ]] || [[ `grep  'CBS-[0-9]\{4\}\.[0-9]\{1\}\.[0-9]-RC[0-9]\{1,3\}' "tag.txt"` ]] || [[ `grep  '[0-9]\{4\}\.[0-9]\{1\}\.[0-9]-RC[0-9]\{1,3\}' "tag.txt"` ]]
 then
@@ -38,8 +38,8 @@ then
         git tag -l
     else
         #read -p "Entered tag is not the latest one.Press yes to proceed no to exit: "
-        #read -e -p "Entered tag is not the latest one.Please Enter Y/y to proceed: " choice
-        [[ "$2" == [Yy]* ]] && \
+        read -e -p "Entered tag is not the latest one.Please Enter Y/y to proceed: " choice
+        [[ "$choice" == [Yy]* ]] && \
         COMMIT_HASH=$(git rev-list -n 1 $NEW_TAG) && \
         git tag ${RELEASE_BRANCH} ${COMMIT_ID} && \
         git push origin ${RELEASE_BRANCH} && \
