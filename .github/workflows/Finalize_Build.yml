@@ -6,7 +6,7 @@ on:
         required: true
         default: 'Foo'
       prompt:
-        description: 'Entered tag is not the latest one.Please Enter Y/y to proceed:'
+        description: 'Please confirm if Entered tag is not the latest one and Enter Y/y to proceed:'
         required: true
         default: 'Foo'
 
